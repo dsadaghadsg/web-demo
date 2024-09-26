@@ -1,0 +1,24 @@
+{
+    "categories": [
+      {"id": 1, "name": "TẤT CẢ QUẦN DÀI"},
+      {"id": 2, "name": "QUẦN JEAN"},
+      {"id": 3, "name": "QUẦN THUN"},
+      {"id": 4, "name": "QUẦN TÂY VÀ QUẦN KAKI"},
+      {"id": 5, "name": "QUẦN NHUNG VÀ QUẦN LEAN"}
+    ],
+    "categories2": [
+      {"id": 1, "name": "QUẦN JEAN"},
+      {"id": 2, "name": "QUẦN THUN"},
+      {"id": 3, "name": "QUẦN TÂY VÀ QUẦN KAKI"},
+      {"id": 4, "name": "QUẦN NHUNG VÀ QUẦN LEAN"}
+    ],
+    "categories3":[
+      {"id":1, "name":"TẤT CẢ PHỤ KIỆN"}
+    ],
+    "ship":[
+      {
+        "shippingMessage": "MIỄN PHÍ GIAO HÀNG TỪ ĐƠN HÀNG 500.000"
+      }
+    ]
+  }
+  

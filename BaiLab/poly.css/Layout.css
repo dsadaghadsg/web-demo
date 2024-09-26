@@ -1,0 +1,78 @@
+header{
+    position: relative;
+   
+}
+
+.shopping-mall{
+    position: absolute;
+    bottom: 20px;
+    font-variant: small-caps;
+}
+
+.shopping-mall>h1{
+    font-family: Impact;
+    font-size: 50px;
+    color: white;
+    letter-spacing: 0.3px;
+    text-shadow: 0 0 2px black;
+    padding-bottom: 0px;
+    border-bottom: 1px dotted gray;
+    margin: 0px;
+}
+
+.shopping-mall>h5 {
+    margin-top: 5px;
+    letter-spacing: 0.5px;
+}
+
+
+
+.poly-cart{
+    margin-top: 5px;
+}
+.poly-cart ul{
+    list-style-type: none;
+    margin-left: 0px;
+    
+    padding: 0;
+}
+.poly-cart img{
+    width: 70px;
+    margin-left: 15px;
+}
+.poly-cart input{
+    margin-left: 15px;
+    width: 230px;
+}
+
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+.bg-danger a:hover {
+    text-decoration: underline;
+  }
+  .cool-mate {
+    text-decoration: none;
+    font-weight: bold;
+    color: black; /* Màu chữ cho "COOL" */
+    border: 1px solid #808080; /* Viền màu xám cho "COOL MATE" */
+    padding: 5px; /* Khoảng cách giữa nội dung và viền */
+    background-color: #cccccc;
+  }
+  .custom-margin-right {
+    margin-right: 20px; /* Điều chỉnh giá trị margin theo ý muốn của bạn */
+  }
+  .bg-dark-gray {
+    background-color: #555 !important;
+  }
+
+  .custom-link:hover {
+    border: 1px solid #ced4da; /* Màu viền khi được click */
+    background-color: #cccccc !important; /* Màu nền khi được click, !important để ghi đè các giá trị mặc định */
+    color: #000 !important; /* Màu chữ khi được click, !important để ghi đè các giá trị mặc định */
+  }
+  
+  

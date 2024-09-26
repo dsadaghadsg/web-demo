@@ -1,0 +1,93 @@
+.dropdown-item:hover {
+    background-color: #e0e0e0; /* Màu xám khi hover */
+}
+.dropdown-menu:hover {
+    background-color: #555555; /* Màu xám đậm khi hover */
+}
+.link-item {
+    display: inline-block; /* Để margin hoạt động, cần chuyển thành inline-block */
+    margin-right: 20px; /* Khoảng cách giữa các liên kết */
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  .link-item{
+    border: 1px solid black; /* Màu đen đậm */
+    padding: 10px; /* Khoảng cách bên trong viền */
+    text-align: center; /* Căn giữa văn bản */
+    transition: background-color 0.3s, border-color 0.3s; /* Thêm hiệu ứng chuyển động */
+    
+  }
+  .custom-list-unstyled {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .custom-text-decoration-none {
+    text-decoration: none;
+  }
+  
+  .custom-list-unstyled li a {
+    color: #434343;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px; /* Điều chỉnh giá trị của margin-bottom theo ý muốn */
+  }
+/* Đưa sang phải css*/
+  
+.dropdown{
+    display: flex;
+    justify-content: flex-end;
+}
+/* xóa dấu gạch chân xanh */
+a {
+  text-decoration: none;
+  color: inherit; /* Giữ màu sắc mặc định của văn bản */
+}
+
+
+/* Thiết lập đường gạch giả cho div chứa ảnh */
+.image-container {
+  position: relative;
+}
+
+.image-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Độ rộng của đường gạch */
+  border-bottom: 1px solid #e5e5e5; /* Màu và chiều rộng của đường gạch */
+}
+/* làm mất dấu chấm*/
+.list-menu{
+  list-style: none;
+}
+
+ /* Sử dụng flexbox để hiển thị sản phẩm trên một hàng ngang */
+ #page-1 {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.col-md-4 {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out;
+}
+
+.sort-asc .col-md-4 {
+  transform: rotate(180deg);
+}
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.image-container .col-md-4 {
+  width: 30%; /* Điều chỉnh độ rộng của mỗi ảnh, tùy thuộc vào thiết kế mong muốn */
+}

@@ -1,0 +1,28 @@
+{
+    "products": [
+        {"id": 1,"name": "QUẦN KAKI SLIMFIT INDEX", "price": 450000, "image": "ima/INDEX.webp"},
+        {"id": 2,  "name": "QUẦN JEAN STRAIGHT SCIS", "price": 580000, "image": "ima/scis.webp"},
+        {"id": 3,   "name": "QUẦN JEAN SLIMFIT SORS", "price": 550000, "image": "ima/sors.webp"},
+        {"id": 4,  "name": "QUẦN JEAN SLIM CROPPED PAINT", "price": 580000, "image": "ima/paint.webp"}
+        
+      ],
+      "products2": [
+        {"id": 1,"name": "QUẦN KAKI SLIMFIT INDEX", "price": 350000, "image": "ima/BUMBA.webp"},
+        {"id": 2,  "name": "QUẦN JEAN STRAIGHT SCIS", "price": 350000, "image": "ima/codi.webp"},
+        {"id": 3,   "name": "QUẦN JEAN SLIMFIT SORS", "price": 290000, "image": "ima/moll.webp"},
+        {"id": 4,  "name": "QUẦN JEAN SLIM CROPPED PAINT", "price": 350000, "image": "ima/dabi.webp"}
+        
+      ],
+      "products3":[
+        {"id":1,"name":"BÌNH GIỮ NHIỆT FAPAS", "price":350000,"image":"ima/binh.webp"},
+        {"id":2,"name":"NÓN DOMIANA","price":350000,"image":"ima/non.webp"},
+        {"id":3,"name":"NÓN TUBE","price":290000,"image":"ima/nontube.webp"},
+        {"id":4,"name":"TÚI ĐEO CHÉO CANTA","price":350000,"image":"ima/canta.webp"}
+      ],
+      "products4":[
+        {"id":1,"name":"QUẦN BOXER NEWS","price":"130000","image":"ima/news.webp"},
+        {"id":2,"name":"QUẦN BOXER SYMMETRY","price":130000,"image":"ima/symm.webp"},
+        {"id":3,"name":"QUẦN BOXER GLOBE","price":130000,"image":"ima/globe.webp"},
+        {"id":4,"name":"QUẦN BOXER GLUE","price":130000,"image":"ima/glue.webp"}
+      ]
+}

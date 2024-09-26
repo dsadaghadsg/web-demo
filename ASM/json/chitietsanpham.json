@@ -1,0 +1,45 @@
+  {
+    "clothes": [
+      {
+        "name": "ÁO THUN NGẮN REGULAR CONE"
+        
+      }
+    ],
+    "images": [
+      "ima/ctsp1.webp",
+      "ima/4.webp",
+      "ima/5.webp",
+      "ima/6.webp"
+      
+    ],
+    
+    "contactInfo": {
+      "title": "LIÊN HỆ",
+      "fontSize": "24px",
+      "fontWeight": "bold",
+      "color": "#1c1c1c"
+    },
+    
+      
+    "addToCartButton": {
+      "link": "giohang.html",
+      "id": "addToCartBtn",
+      "text": "Thêm vào giỏ hàng"
+    },
+    "buyNowButton": {
+      "link": "thanhtoan.html",
+      "text": "Mua ngay",
+      "style": {
+        "backgroundColor": "black",
+        "color": "white"
+      }
+    },
+    "shippingPolicy": {
+      "image": "ima/policy_product_1.svg",
+      "text": "FREESHIP từ đơn hàng 500.000đ trở lên"
+    },
+    "checkingPolicy": {
+      "image": "ima/policy_product_2.svg",
+      "text": "Kiểm tra hàng trước khi thanh toán"
+    }
+  }

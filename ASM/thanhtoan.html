@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha384-o7DdXlMUE6mX5jrr4l7dsHNVsYYs9yA2fM6WAoqwGAsjKuqG5eT5EVZfKHmX6LIm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="path/to/your/style.css">
+    <style>
+      /* Add your custom styles here */
+      .payment-content {
+            display: none;
+      }
+  </style>
+
+    <title>THANH TOÁN FAPAS</title>
+  </head>
+  <body>
+    <section class="header">
+        <div class="container-fluid ">
+            <div class="row">
+              <div class="col-sm-8  text-center ">
+                <a href="#" class="">
+                    <img src="ima/logo.webp" alt="" class="img-fluid" style="width: 200px; height: 140px;">
+                </a>
+                <div class="row">
+                    <div class="col-sm-8  ">
+                        <p class="d-inline float-start ms-3">Thông tin nhận hàng</p>
+                        <a href="dangnhap.html" id="loginButton" class="float-end">Đăng nhập</a>
+                        <a href="#" id="logoutButton" class="float-end" style="display: none;">Đăng xuất</a>
+                        <div class="form-floating mb-3 ms-3">
+                            <input type="email" class="form-control mt-5" id="fullName" placeholder="Họ và tên">
+                            <label for="fullName" class="">Họ và tên</label>
+                            <div class="error-message" id="nameError"></div>
+                            <div class="input-group mt-3">
+                                <input type="text" class="form-control" aria-label="Text input with segmented dropdown button" placeholder="Số điện thoại">
+                                <button type="button" class="btn btn-outline-secondary" id="selectedCountry">Nước</button>
+                                <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                  <li><a class="dropdown-item" href="#"data-country-code="+84">VIỆT NAM (+84)</a></li>
+                                  <li><a class="dropdown-item" href="#"data-country-code="+58">VENEZUELA (+58)</a></li>
+                                  <li><a class="dropdown-item" href="#"data-country-code="+967">YEMEN (+967)</a></li>
+                                  <li><a class="dropdown-item" href="#"data-country-code="+260">ZAMBIA (+260)</a></li>
+                                  <li><a class="dropdown-item" href="#"data-country-code="+963">SYRIA (+963)</a></li>
+                                  <li><a class="dropdown-item" href="#"data-country-code="+263">ZIMBABWE (+263)</a></li>
+                                  <li><a class="dropdown-item" href="#"data-country-code="+39">VATINCAN (+39)</a></li>
+                                </ul>
+                              </div>
+                              <div class="mt-3">
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Địa chỉ (tùy chọn)">
+                              </div>
+                              <select class="form-select mt-3" aria-label="Default select example">
+                                <option selected>Tỉnh thành</option>
+                                <option value="1">TPHCM</option>
+                                <option value="2">CẦN THƠ</option>
+                                <option value="3">AN GIANG</option>
+                                <option value="4">LONG AN</option>
+                                <option value="5">HÀ NỘI</option>
+                                <option value="6">VŨNG TÀU</option>
+                                <option value="7">BẾN TRE</option>
+                                <option value="8">KIÊN GIANG</option>
+                                <option value="9">ĐÀ LẠT</option>
+                              </select>
+                              <select class="form-select mt-3" aria-label="Default select example" >
+                                <option selected>Quận huyện (tùy chọn)</option>
+                                <option value="1">QUẬN 1</option>
+                                <option value="2">QUẬN 2</option>
+                                <option value="3">QUẬN 3</option>
+                                <option value="4">QUẬN 4</option>
+                                <option value="5">QUẬN 5</option>
+                                <option value="6">QUẬN 6</option>
+                                <option value="7">QUẬN 7</option>
+                                <option value="8">QUẬN 8</option>
+                                <option value="9">QUẬN 9</option>
+                                <option value="10">QUẬN 10</option>
+
+                              </select>
+                              <select class="form-select mt-3" aria-label="Default select example">
+                                <option selected>Phường xã (tùy chọn)</option>
+                                <option value="1">Thị trấn Đồi Ngô</option>
+                                <option value="2">Thị trấn Lục Nam</option>
+                                <option value="3">Xã Đông Hưng</option>
+                                <option value="4">Xã Đông Phú</option>
+                                <option value="5">Xã Tam Dị</option>
+                                <option value="6">Xã Chu Điện</option>
+                              </select>
+                              <div class="mt-3">
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ghi chú (tùy chọn)">
+                              </div>
+                          </div>
+                    </div>
+                    
+                    <div class="col-sm-4 ">
+                        <div class="text-start">Vận chuyển</div>
+                        <div class="border py-3 mt-4 d-flex align-items-center">
+                            <p class="text-start m-0">Giao hàng tận nơi</p>
+                            <p class="ms-auto m-0">30.000đ</p>
+                        </div>
+                        <div class="text-start py-4" style="font-weight: bold; color: black; font-size: 20px;">Thanh toán</div>
+                        <div class="border d-flex align-items-start mt-3">
+                          <input class="form-check-input mt-2" type="radio" name="paymentMethod" id="vnpayRadio" value="vnpay">
+                          <label class="form-check-label ms-2" for="vnpayRadio">
+                              Thanh toán qua VNPAY
+                          </label>
+                          <img src="ima/vnpay.png" alt="" class="img-fluid" style="width: 50px; height: 30px;">
+                      </div>
+  
+                      <div class="payment-content" id="momoContent">
+                          <!-- Nội dung chuyển khoản Momo sẽ được thay đổi bằng Ajax -->
+                          <p>Nội dung chuyển khoản Momo sẽ được hiển thị ở đây</p>
+                          
+                      </div>
+  
+                      <div class="payment-content" id="vnpayContent">
+                          <!-- Nội dung chuyển khoản VNPAY sẽ được thay đổi bằng Ajax -->
+                          <p>Nội dung chuyển khoản VNPAY sẽ được hiển thị ở đây</p>
+                      </div>
+                      
+                      
+                      <div class="border d-flex align-items-start mt-3">
+                        <input class="form-check-input mt-2" type="radio" name="paymentMethod" id="codRadio" value="cod">
+                        <label class="form-check-label ms-2" for="codRadio">
+                            Thanh toán khi nhận hàng (COD)
+                        </label>
+                        <img src="ima/vnpay.png" alt="" class="img-fluid" style="width: 50px; height: 30px;">
+                    </div>
+                    </div>
+                </div>
+              </div>
+                <div class="col-sm-4  py-3" style="background-color: #FAFAFA;">
+                  <p class="ms-4"style="font-weight: bold; color: black;">Đơn hàng (1 sản phẩm) </p>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-6 d-flex  py-2">
+                      <img src="ima/ALOUD.webp" alt="" class="img-fluid">
+                      <div class="d-inline text-center">
+                        <p class=" mt-3 ">Áo Thun Ngắn Relaxed Ken</p>
+                        <p class="ms-3 ">320.000đ</p>
+                      </div>
+                      
+                    </div>
+                    <hr>
+                  </div>
+                  <div class="input-group mt-3">
+                    <input id="couponInput" type="text" class="form-control " placeholder="Nhập mã giảm giá" aria-label="Coupon Code">
+                    <button id="applyButton" class="btn btn-outline-secondary ms-2" type="button" >Áp dụng</button>
+                    
+                  </div>
+                  <hr>
+                  <div class="d-flex">
+                    <p class="">Tạm tính</p>
+                    <p class="ms-auto">320.000đ</p>
+                    
+                  </div>
+                  <div class="d-flex">
+                    <p class="">Phí vận chuyển</p>
+                    <p class="ms-auto">30.000đ</p>        
+                  </div>
+                  <hr>
+                  <div class="d-flex">
+                    <h1>Tổng cộng</h1>
+                    <h2 class="ms-auto mt-2" style="color: blue;">350.000đ</h2>
+                  </div>
+                  <div class="d-flex ">
+                    <a href="giohang.html" class="mt-4 text-decoration-none" style="font-size: 20px;">Quay về giỏ hàng</a>
+                    <a href="#" class="ms-auto mt-3">
+                      <button type="button" class="btn btn-primary "onclick="validateAndSubmit()">ĐẶT HÀNG</button>
+
+                    </a>
+                  </div>
+                </div>  
+              
+                   
+                  
+                   
+                  
+                  
+              
+            </div>
+        </div>
+    </section>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+    <!--Khi click vào số điện thoại sẽ hiển thị ra mục-->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Lắng nghe sự kiện khi click vào một mục trong dropdown
+        document.querySelectorAll('.dropdown-item').forEach(function (item) {
+          item.addEventListener('click', function () {
+            // Lấy nội dung và data-country-code của mục được chọn
+            var countryText = this.textContent;
+            var countryCode = this.getAttribute('data-country-code');
+      
+            // Gán nội dung và data-country-code vào nút "Nước"
+            document.getElementById('selectedCountry').textContent = countryText;
+            document.getElementById('selectedCountry').setAttribute('data-country-code', countryCode);
+          });
+        });
+      });
+      </script>
+    
+
+    <!-- ... Your HTML code ... -->
+
+<!-- Trong file thantoan.html -->
+<script>
+  // Kiểm tra trạng thái đăng nhập khi trang thanh toán được tải
+document.addEventListener('DOMContentLoaded', function () {
+    checkLoginStatus();
+});
+
+// Hàm kiểm tra trạng thái đăng nhập
+function checkLoginStatus() {
+    var isLoggedIn = localStorage.getItem('isLoggedIn');
+
+    if (isLoggedIn === 'true') {
+        // Nếu đã đăng nhập, ẩn form đăng nhập và hiển thị nút "Đăng xuất"
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('logoutButton').style.display = 'block';
+    } else {
+        // Nếu chưa đăng nhập, hiển thị form đăng nhập và ẩn nút "Đăng xuất"
+        document.getElementById('loginForm').style.display = 'block';
+        document.getElementById('logoutButton').style.display = 'none';
+    }
+}
+
+// Hàm xử lý sự kiện đăng xuất
+function logout() {
+    // Đặt lại trạng thái đăng nhập
+    localStorage.setItem('isLoggedIn', 'false');
+
+    // Hiển thị form đăng nhập và ẩn nút "Đăng xuất"
+    document.getElementById('loginForm').style.display = 'block';
+    document.getElementById('logoutButton').style.display = 'none';
+}
+
+</script>
+
+
+<script>
+  $(document).ready(function () {
+      $('input[name="paymentMethod"]').change(function () {
+          // Ẩn tất cả các phần nội dung thanh toán
+          $('.payment-content').hide();
+
+          // Hiển thị phần nội dung thanh toán tương ứng
+          var selectedMethod = $(this).val();
+          $('#' + selectedMethod + 'Content').show();
+      });
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+  
+  </body>
+</html>

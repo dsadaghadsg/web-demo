@@ -1,0 +1,12 @@
+{
+  "freeShipping": {
+    "title": "MIỄN PHÍ GIAO HÀNG",
+    "condition": "TỪ ĐƠN HÀNG 500.000"
+  },
+  "item": [
+    { "title": "Hướng dẫn mua hàng", "link": "#" },
+    { "title": "Hướng dẫn thanh toán", "link": "#" },
+    { "title": "Hướng dẫn giao nhận", "link": "#" },
+    { "title": "Điều khoản dịch vụ", "link": "#" }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+    "products5":[
+        {"id":1,"name":"ÁO THUN NGẮN RELAXED VERSION","price":"349000","image":"ima/img-9683.webp"},
+        {"id":2,"name":"ÁO THUN NGẮN RELAXED KEN","price":320000,"image":"ima/img-9864.webp"},
+        {"id":3,"name":"ÁO THUN NGẮN REGULAR TRAY","price":"310000","image":"ima/fapas-071223-3-12.webp"},
+        {"id":4,"name":"ÁO SWEATER REGUALR TRAY","price":"390000","image":"ima/SWATER TRAY.webp"},
+        {"id":5,"name":"ÁO THUN NGẮN RELAXED ALOUD","price":"349000","image":"ima/ALOUD.webp"},
+        {"id":6,"name":"ÁO POLO REGULAR PATER","price":"380000","image":"ima/PATER.webp"},
+        {"id":7,"name":"ÁO THUN DÀI REGULAR TRUE","price":"350000","image":"ima/true.webp"},
+        {"id":8,"name":"QUẦN BOXER GLOBE","price":"130000","image":"ima/globe.webp"},
+        {"id":9,"name":"QUẦN BOXER NEWS","price":"130000","image":"ima/news.webp"},
+        {"id":10,"name":"QUẦN BOXER GLUE","price":"130000","image":"ima/glue.webp"},
+        {"id":11,"name":"QUẦN BOXER SYMMETRY","price":"130000","image":"ima/symm.webp"},
+        {"id":12,"name":"QUẦN KAKI SLIMFIT INDEX","price":"130000","image":"ima/SLIMFIT.webp"}
+      ],
+      "products6":[
+        {"id":1,"name":"ÁO THUN NGẮN MESH RELAXED SCOCH","price":"320000","image":"ima/SCOCH.webp"},
+        {"id":2,"name":"ÁO KHOẮC REGULAR ZIB","price":"580000","image":"ima/ZIB.webp"},
+        {"id":3,"name":"ÁO POLO REGULAR RIN","price":"380000","image":"ima/RIN.webp"},
+        {"id":4,"name":"ÁO THUN NGẮN OVER RACER","price":"349000","image":"ima/RACER.webp"},
+        {"id":5,"name":"ÁO THUN NGẮN OVER TUGA","price":"280000","image":"ima/TUGA.webp"},
+        {"id":6,"name":"ÁO THUN NGẮN RELAXED HAGRA SS3","price":"320000","image":"ima/HAGRA SS3.webp"},
+        {"id":7,"name":"ÁO THUN NGẮN REGULAR TIAL SS2","price":"280.000","image":"ima/TIAL SS2.webp"},
+        {"id":8,"name":"ÁO THUN NGẮN RELAXED API","price":"310000","image":"ima/API.webp"},
+        {"id":9,"name":"ÁO THUN NGẮN MESH RELAXED RAISIN","price":"320000","image":"ima/RAISIN.webp"}
+      ],
+      "products7":[
+        {"id":1,"name":"ÁO SƠ MI NGẮN RELAXED SIMON","price":"350000","image":"ima/SIMON.webp"},
+        {"id":2,"name":"ÁO THUN NGẮN RELAXED BEY","price":"310000","image":"ima/BEY.webp"},
+        {"id":3,"name":"QUẦN SHORTS RELAXED BUMBA","price":"350000","image":"ima/BUMBA.webp"},
+        {"id":4,"name":"ÁO THUN NGẮN RELAXED KEN","price":"320000","image":"ima/img-9864.webp"}
+      ]
+}

@@ -1,0 +1,59 @@
+.flashing-text {
+    color: #ffffff;
+    font-weight: bold;
+    animation: flash 1s infinite;
+    display: inline; /* hoặc display: inline-block; */
+}
+
+@keyframes flash {
+    50% {
+        opacity: 0;
+    }
+}
+
+a {
+    text-decoration: none;
+  }
+  .custom-border {
+    border: 2px solid #000; /* Màu đen đậm */
+    padding: 10px; /* Khoảng cách bên trong viền */
+    text-align: center; /* Căn giữa văn bản */
+    transition: background-color 0.3s, border-color 0.3s; /* Thêm hiệu ứng chuyển động */
+    
+  }
+  .custom-border:hover {
+    background-color: #CCCCCC;
+    border-color: #fff;
+    color: #fff; /* Đổi màu chữ khi click */
+  }
+  .link-item {
+    display: inline-block; /* Để margin hoạt động, cần chuyển thành inline-block */
+    margin-right: 20px; /* Khoảng cách giữa các liên kết */
+    text-decoration: none;
+    font-size: 18px;
+    
+  }
+
+  .link-item{
+    border: 1px solid black; /* Màu đen đậm */
+    padding: 10px; /* Khoảng cách bên trong viền */
+    text-align: center; /* Căn giữa văn bản */
+    transition: background-color 0.3s, border-color 0.3s; /* Thêm hiệu ứng chuyển động */
+    
+  }
+  .link-item:hover{
+   background-color: #CCCCCC;
+    border-color: #fff;
+    color:rgb(255, 255, 255);
+    font-weight: bold;
+  }
+  
+.list-menu{
+    list-style: none;
+}
+.dropdown-item:hover {
+    background-color: #e0e0e0; /* Màu xám khi hover */
+}
+.dropdown-menu:hover {
+    background-color: #555555; /* Màu xám đậm khi hover */
+}

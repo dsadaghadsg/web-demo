@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Liên kết Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title>Tính Chu Vi và Diện Tích Hình Chữ Nhật</title>
+</head>
+<body ng-app="myapp" ng-controller="myctrl" class="container mt-5">
+
+    <form>
+        <div class="mb-3">
+            <label for="chieuDai" class="form-label">Chiều Dài:</label>
+            <input type="number" class="form-control" id="chieuDai" ng-model="chieuDai" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="chieuRong" class="form-label">Chiều Rộng:</label>
+            <input type="number" class="form-control" id="chieuRong" ng-model="chieuRong" required>
+        </div>
+
+        <div ng-if="ketQuaChuVi && ketQuaDienTich">
+            <div class="mb-3">
+                <label for="ketQuaChuVi" class="form-label">Chu Vi:</label>
+                <input type="text" class="form-control" id="ketQuaChuVi" ng-model="ketQuaChuVi" readonly>
+            </div>
+    
+            <div class="mb-3">
+                <label for="ketQuaDienTich" class="form-label">Diện Tích:</label>
+                <input type="text" class="form-control" id="ketQuaDienTich" ng-model="ketQuaDienTich" readonly>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary" ng-click="tinhChuViDienTich()">Tính Chu Vi và Diện Tích</button>
+    </form>
+
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl", function ($scope) {
+            $scope.tinhChuViDienTich = function () {
+                if ($scope.chieuDai && $scope.chieuRong) {
+                    $scope.ketQuaChuVi = 2 * ($scope.chieuDai + $scope.chieuRong);
+                    $scope.ketQuaDienTich = $scope.chieuDai * $scope.chieuRong;
+                } else {
+                    alert("Vui lòng nhập cả chiều dài và chiều rộng.");
+                }
+            };
+        });
+    </script>
+</body>
+</html>

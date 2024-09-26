@@ -1,0 +1,160 @@
+(function (window, document, jqueryVer, callback) {
+    var $, state, done = false;
+    if (!($ = window.jQuery) || jqueryVer > $.fn.jquery || callback($, done)) {
+        var script = document.createElement("script");
+        script.type = "text/javascript",
+            script.src = "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+            script.onload = script.onreadystatechange = function () {
+                if (!done && (!(state = this.readyState) || state === "loaded" || state === "complete")) {
+                    callback(($ = window.jQuery).noConflict(1), done = true);
+                    $(script).remove();
+                }
+            };
+        try {
+            document.body.appendChild(script);
+        }
+        catch (ex) {
+            try {
+                document.documentElement.childNodes[0].appendChild(script);
+            }
+            catch (ex) { }
+        }
+    }
+})(window, document, "1.9.1", function ($, done) {
+    'use strict';
+
+    var abEnv = "prod",
+        AB_SERVER_URL = "";
+    switch (abEnv) {
+        case "prod":
+            AB_SERVER_URL = "https://statistic-blog-v2.sapoapps.vn";
+            break;
+        case "dev":
+            AB_SERVER_URL = "https://statistic-blog-v2.sapoapps.vn";
+            break;
+    }
+
+    //Hàm format string như C# sử dụng "Test format {0}".format("abc")
+    if (!String.prototype.format) {
+        String.prototype.format = function () {
+            var args = arguments;
+            return this.replace(/{(\d+)}/g, function (match, number) {
+                return typeof args[number] != "undefined"
+                    ? args[number]
+                    : match
+                    ;
+            });
+        };
+    }
+
+    if (!Node.prototype.getElementsByAttributeValue) {
+        Node.prototype.getElementsByAttributeValue = function (attribute, value) {
+            var dom = this.all || this.getElementsByTagName("*");
+            var match = new Array();
+            for (var i in dom) {
+                if ((typeof dom[i]) === "object") {
+                    if (dom[i].getAttribute(attribute) === value) {
+                        match.push(dom[i]);
+                    }
+                }
+            }
+            return match;
+        };
+    }
+
+    var abGetStoreAlias = function () {
+        var result = "";
+        var store = window.Bizweb.store;
+        if (typeof store !== "undefined" && store.indexOf(".mysapo.net") > -1) {
+            result = store.replace(".mysapo.net", "");
+        }
+        return result;
+    }
+
+    var storeAlias = abGetStoreAlias(),
+        requestTimeout = 40000;
+
+
+    var abbsModuleArticleViewCount = function() {
+        var $inputArticle = $('.abbs-article-id');
+        if ($inputArticle.length <= 0) return;
+        var articleId = $inputArticle.attr('data-article-id');
+        if (articleId > 0) {
+            $.ajax({
+                url: `${AB_SERVER_URL}/api/v1/stats?store_alias=${storeAlias}&article_ids=${articleId}`,
+                type: "GET",
+                timeout: requestTimeout,
+                traditional: true,
+                success: function (result) {
+                    // abbsModuleArticleViewCountDisplay(result)
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    console.log('Error while fetch data');
+                }
+            });
+        }
+    }
+
+    var abbsModuleArticleViewCountDisplay = function(viewResult) {
+        var $viewCountModule = $('.ab-module-article-view-count');
+        $viewCountModule.html(viewResult.config.display_text + ": "
+            + (viewResult.views.length ? new Intl.NumberFormat("en-US").format(viewResult.views[0].view) : 0));
+        abbsStyleModuleViewCount(viewResult.config, '.ab-module-article-view-count');
+    }
+  
+    var abbsStyleModuleViewCount = function (config, className) {
+        var $viewCountModule = $(className);
+        if ($viewCountModule.length <= 0) return;
+        $viewCountModule.css({
+            "display": "inline-block",
+            "padding": "0.5rem",
+            "text-align": "center",
+            "background-color": config.background,
+            "color": config.color,
+            "font-family": config.font_family,
+            "font-size": config.font_size,
+            "font-style": config.italic ? "italic" : "normal",
+            "font-weight": config.bold ? "bold" : "normal",
+        });
+    }
+
+    var abbsModuleBlogListViewCount = function() {
+        var $blogListTag = $('.ab-module-blog-list-view-count');
+        if ($blogListTag.length <= 0) return;
+        var articleIds = [];
+        $blogListTag.each(function() {
+            articleIds.push($(this).attr("data-article-id"));
+        });
+        $.ajax({
+            url: `${AB_SERVER_URL}/api/v1/stats?store_alias=${storeAlias}&article_ids=${articleIds.join()}`,
+            type: "GET",
+            timeout: requestTimeout,
+            traditional: true,
+            success: function (result) {
+                abbsModuleBlogListViewCountDisplay(result)
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log('Error while fetch data');
+            }
+        });
+    }
+
+    var abbsModuleBlogListViewCountDisplay = function(viewResult) {
+        var $blogListTag = $('.ab-module-blog-list-view-count');
+        $blogListTag.each(function() {
+            var articleId = $(this).attr("data-article-id");
+            var view = viewResult.views.find(function (view) {
+                return view.article_id == articleId;
+            });
+            $(this).html(viewResult.config.display_text
+                + ": " + (view ? new Intl.NumberFormat("en-US").format(view.view) : 0));
+        });
+
+        abbsStyleModuleViewCount(viewResult.config, '.ab-module-blog-list-view-count');
+    }
+
+    $(document).ready(function () {
+        abbsModuleArticleViewCount();
+        abbsModuleBlogListViewCount();
+    });
+});

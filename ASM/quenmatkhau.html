@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Thêm liên kết đến Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link  href="css/dangnhap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <title>QUÊN MẬT KHẨU</title>
+</head>
+<body>
+
+
+    <section class="nav">
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- Thêm liên kết đến Bootstrap CSS -->
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+            <link  href="css/dangnhap.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+            <title>ĐĂNG NHẬP</title>
+        </head>
+        <body>
+        
+        <section class="nav">
+           <div class="col-sm-6 text-center py-3">
+                <p class="">ĐĂNG NHẬP</p>
+                <div class="ajax" id="loginForm">
+                    <!-- Form đăng nhập -->
+                    <input type="email" class="form-control ms-5 " id="emailInput" placeholder="Email của bạn">
+                    <div class="error-message" id="emailError"></div>
+                    <input type="password" class="form-control ms-5 mt-3" id="passwordInput" placeholder="Nhập mật khẩu">
+                    <div class="error-message" id="passwordError"></div>
+                    <a href="#">
+                        <button type="button" class="btn btn-light mt-3 text-center" onclick="validateAndLogin()">ĐĂNG NHẬP</button>
+                    </a>
+                    <a href="#" id="forgotPasswordLink" onclick="showForgotPasswordForm()"> <!-- Thêm sự kiện onclick -->
+                        <h1 class="mt-3" style="font-size: 15px; font-weight: bold; color: black;">QUÊN MẬT KHẨU?</h1>
+                    </a>
+                </div>
+                
+                <div class="ajax" id="forgotPasswordForm" style="display: none;"> <!-- Ẩn form quên mật khẩu ban đầu -->
+                    <!-- Form quên mật khẩu -->
+                    <input type="email" class="form-control ms-5 " id="forgotEmailInput" placeholder="Email của bạn">
+                    <div class="error-message" id="forgotEmailError"></div>
+                    <a href="#">
+                        <input type="sent" class="form-control ms-5 mt-3 text-center" id="sendPasswordInput" placeholder="Gửi">
+                    </a>
+                    <a href="#" class="">
+                       <span class="">
+                        Hủy
+                       </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Thêm liên kết đến Bootstrap JavaScript (tuỳ chọn) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <script>
+            function validateAndLogin() {
+                // Code xác thực đăng nhập
+            }
+        
+            function showForgotPasswordForm() {
+                // Ẩn form đăng nhập
+                document.getElementById('loginForm').style.display = 'none';
+                // Hiển thị form quên mật khẩu
+                document.getElementById('forgotPasswordForm').style.display = 'block';
+            }
+        </script>
+        
+        </body>
+        </html>
+        
+    </section>
+    <!-- Thêm liên kết đến Bootstrap JavaScript (tuỳ chọn) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Click trang theo thu tu 1-... -->
+    <script>
+      function showPage(pageNumber) {
+          // Ẩn tất cả các trang
+          var allPages = document.querySelectorAll('.page-content');
+          allPages.forEach(function (page) {
+              page.style.display = 'none';
+          });
+  
+          // Hiển thị trang được chọn
+          var selectedPage = document.getElementById('page-' + pageNumber);
+          if (selectedPage) {
+              selectedPage.style.display = 'block';
+          }
+      }
+  </script>
+      <!-- Click  vao 1 checkbox -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const checkboxes = document.querySelectorAll('.custom-checkbox1');
+
+        checkboxes.forEach(function (checkbox) {
+            checkbox.addEventListener('change', function () {
+                checkboxes.forEach(function (otherCheckbox) {
+                    if (otherCheckbox !== checkbox) {
+                        otherCheckbox.checked = false;
+                    }
+                });
+            });
+        });
+    });
+</script>
+        <!-- Click vào dấu tích checkbox hiện giữa -->
+
+        <script>
+          function toggleCheckbox(label) {
+              var checkbox = label.querySelector('input[type="checkbox"]');
+              checkbox.checked = !checkbox.checked;
+              label.classList.toggle('checked', checkbox.checked);
+          }
+      </script>
+  <!--Bắt lỗi form đăng ký-->
+  <script>
+    function validateForm() {
+        // Lấy giá trị từ các ô input
+        var ten = document.getElementById("ten").value;
+        var ho = document.getElementById("ho").value;
+        var email = document.getElementById("email").value;
+        var matkhau = document.getElementById("matkhau").value;
+
+        // Kiểm tra nếu có ô input nào trống, hiển thị thông báo
+        if (ten === "" || ho === "" || email === "" || matkhau === "") {
+            alert("Vui lòng điền đầy đủ thông tin.");
+        } else {
+            // Thực hiện đăng ký hoặc các hành động khác ở đây
+            alert("Đăng ký thành công!");
+        }
+    }
+</script>
+
+<script>
+  function validateAndLogin() {
+      // Lấy giá trị từ các trường thông tin
+      var email = document.getElementById('emailInput').value;
+      var password = document.getElementById('passwordInput').value;
+
+      // Lấy các element để hiển thị thông báo lỗi
+      var emailError = document.getElementById('emailError');
+      var passwordError = document.getElementById('passwordError');
+
+      // Kiểm tra và hiển thị thông báo lỗi nếu có
+      if (email.trim() === '') {
+          emailError.innerText = 'Vui lòng nhập địa chỉ email.';
+      } else {
+          emailError.innerText = ''; // Xóa thông báo lỗi nếu đã nhập đúng
+      }
+
+      if (password.trim() === '') {
+          passwordError.innerText = 'Vui lòng nhập mật khẩu.';
+      } else {
+          passwordError.innerText = ''; // Xóa thông báo lỗi nếu đã nhập đúng
+      }
+
+      // Nếu không có lỗi, có thể thực hiện đăng nhập hoặc các xử lý khác
+      if (emailError.innerText === '' && passwordError.innerText === '') {
+          alert('Đăng nhập thành công!');
+          // Thêm mã xử lý đăng nhập tại đây
+      }
+  }
+</script>
+
+<script>
+  function validateForm() {
+      // Lấy giá trị từ các trường thông tin
+      var ten = document.getElementById('ten').value;
+      var ho = document.getElementById('ho').value;
+      var email = document.getElementById('emailDK').value;
+      var matkhau = document.getElementById('matkhauDK').value;
+
+      // Lấy các element để hiển thị thông báo lỗi
+      var tenError = document.getElementById('tenError');
+      var hoError = document.getElementById('hoError');
+      var emailError = document.getElementById('emailErrorDK');
+      var matkhauError = document.getElementById('matkhauErrorDK');
+
+      // Kiểm tra và hiển thị thông báo lỗi nếu có
+      if (ten.trim() === '') {
+          tenError.innerText = 'Vui lòng nhập tên.';
+      } else {
+          tenError.innerText = ''; // Xóa thông báo lỗi nếu đã nhập đúng
+      }
+
+      if (ho.trim() === '') {
+          hoError.innerText = 'Vui lòng nhập họ.';
+      } else {
+          hoError.innerText = ''; // Xóa thông báo lỗi nếu đã nhập đúng
+      }
+
+      if (email.trim() === '') {
+          emailError.innerText = 'Vui lòng nhập địa chỉ email.';
+      } else if (!email.includes('@')) {
+          emailError.innerText = 'Địa chỉ email phải chứa dấu @.';
+      } else {
+          emailError.innerText = ''; // Xóa thông báo lỗi nếu đã nhập đúng
+      }
+
+      if (matkhau.trim() === '') {
+          matkhauError.innerText = 'Vui lòng nhập mật khẩu.';
+      } else {
+          matkhauError.innerText = ''; // Xóa thông báo lỗi nếu đã nhập đúng
+      }
+
+      // Nếu không có lỗi, có thể thực hiện đăng ký hoặc các xử lý khác
+      if (tenError.innerText === '' && hoError.innerText === '' && emailError.innerText === '' && matkhauError.innerText === '') {
+          alert('Đăng ký thành công!');
+          // Thêm mã xử lý đăng ký tại đây
+      }
+  }
+</script>
+</body>
+
+</html>

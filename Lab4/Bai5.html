@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Liên kết Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title>Thông Tin Sinh Viên và Xếp Loại Học Lực</title>
+</head>
+<body ng-app="myapp" ng-controller="myctrl" class="container mt-5">
+
+    <form>
+        <div class="mb-3 ">
+            <label for="hoTen" class="form-label">Họ và Tên:</label>
+            <input type="text" class="form-control " id="hoTen" ng-model="sinhVien.hoTen" required >
+        </div>
+
+        <div class="mb-3">
+            <label for="ngaySinh" class="form-label" >Ngày Sinh:</label>
+            <input type="date" class="form-control" id="ngaySinh" ng-model="sinhVien.ngaySinh" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="gioiTinh" class="form-label">Giới Tính:</label>
+            <select class="form-select" id="gioiTinh" ng-model="sinhVien.gioiTinh" required>
+                <option value="Nam" >Nam</option>
+                <option value="Nữ">Nữ</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="diemHocLuc" class="form-label">Điểm Học Lực:</label>
+            <input type="number" class="form-control" id="diemHocLuc" ng-model="sinhVien.diemHocLuc" required >
+        </div>
+
+        <button type="button" class="btn btn-primary" ng-click="xepLoaiHocLuc()">Xếp Loại Học Lực</button>
+    </form>
+
+    <div ng-if="sinhVien.xepLoai">
+        <div class="mt-3">
+            <p><strong>Xếp loại học lực:</strong> {{ sinhVien.xepLoai }}</p>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl", function ($scope) {
+            $scope.sinhVien = {
+                hoTen: "",
+                ngaySinh: "",
+                gioiTinh: "Nam",
+                diemHocLuc: 0,
+                xepLoai: "" 
+            };
+
+            $scope.xepLoaiHocLuc = function () {
+                if ($scope.sinhVien.diemHocLuc < 5) {
+                    $scope.sinhVien.xepLoai = "Rớt";
+                } else {
+                    $scope.sinhVien.xepLoai = "Đậu";
+                }
+            };
+        });
+    </script>
+</body>
+</html>
